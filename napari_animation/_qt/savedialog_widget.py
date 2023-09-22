@@ -61,6 +61,7 @@ class SaveDialogWidget(QFileDialog):
             animation_kwargs = {
                 "filename": self.get_file_path(),
                 "fps": self.optionsWidget.fpsSpinBox.value(),
+                #"frame_duration": self.optionsWidget.fpsSpinBox.value(),
                 "quality": int(self.optionsWidget.qualitySlider.value()),
                 "canvas_only": self.optionsWidget.canvasCheckBox.isChecked(),
                 "scale_factor": self.optionsWidget.scaleSpinBox.value(),
@@ -120,7 +121,7 @@ class OptionsWidget(QWidget):
         self.fpsSpinBox = QSpinBox(self)
         self.fpsSpinBox.setRange(1, 100000)
         self.fpsSpinBox.setValue(20)
-        fps_label = QLabel("FPS", self)
+        fps_label = QLabel("fps", self)
         fps_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         layout.addWidget(fps_label)
         layout.addWidget(self.fpsSpinBox)

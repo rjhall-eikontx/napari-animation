@@ -193,9 +193,10 @@ class Animation:
                         output_params=output_params,
                     )
                 else:
+                    frame_duration = 1000 * 1/fps
                     writer = imageio.get_writer(
                         filename,
-                        fps=fps,
+                        duration=frame_duration,
                         format=format,
                     )
             except ValueError as err:
